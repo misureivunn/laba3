@@ -1,0 +1,1 @@
+genhtml build/catch2/coverage.info --output-directory build/catch2/html

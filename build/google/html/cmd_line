@@ -1,0 +1,1 @@
+genhtml build/google/coverage.info --output-directory build/google/html
