@@ -5,32 +5,25 @@ import (
   "fmt"
 )
 
-// =======================
 // TreeNode (private)
-// =======================
+
 type treeNode struct {
   data  int
   left  *treeNode
   right *treeNode
 }
 
-// =======================
 // CompleteBinaryTree (public)
-// =======================
 type CompleteBinaryTree struct {
   root *treeNode // приватный корень
 }
 
-// =======================
 // Constructor
-// =======================
+
 func NewCompleteBinaryTree() *CompleteBinaryTree {
   return &CompleteBinaryTree{root: nil}
 }
 
-// =======================
-// Insert (tInsert)
-// =======================
 func (t *CompleteBinaryTree) Insert(value int) {
   node := &treeNode{data: value}
   if t.root == nil {
@@ -60,9 +53,6 @@ func (t *CompleteBinaryTree) Insert(value int) {
   }
 }
 
-// =======================
-// Search (tSearch)
-// =======================
 func (t *CompleteBinaryTree) Search(value int) bool {
   if t.root == nil {
     return false
@@ -86,9 +76,6 @@ func (t *CompleteBinaryTree) Search(value int) bool {
   return false
 }
 
-// =======================
-// IsComplete
-// =======================
 func (t *CompleteBinaryTree) IsComplete() bool {
   if t.root == nil {
     return true
@@ -122,9 +109,6 @@ func (t *CompleteBinaryTree) IsComplete() bool {
   return true
 }
 
-// =======================
-// Print (printTNode / printT)
-// =======================
 func (t *CompleteBinaryTree) Print() {
   t.printNode(t.root, 0)
 }
@@ -145,9 +129,6 @@ func (t *CompleteBinaryTree) printNode(node *treeNode, indent int) {
   }
 }
 
-// =======================
-// Clear (private, like clear(root))
-// =======================
 func (t *CompleteBinaryTree) clear() {
   t.clearNode(t.root)
   t.root = nil
