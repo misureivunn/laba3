@@ -2,15 +2,9 @@ package classes
 
 import "fmt"
 
-// =======================
-// constants
-// =======================
+const openTableSize = 10
 
-const openTableSize = 10 // аналог OPEN_TABLE_SIZE
-
-// =======================
 // private entry
-// =======================
 
 type openEntry struct {
   key   string
@@ -18,17 +12,10 @@ type openEntry struct {
   used  bool
 }
 
-// =======================
-// HashTableOpen (PUBLIC)
-// =======================
 
 type HashTableOpen struct {
   table [openTableSize]openEntry // private
 }
-
-// =======================
-// Constructor
-// =======================
 
 func NewHashTableOpen() *HashTableOpen {
   ht := &HashTableOpen{}
@@ -42,10 +29,7 @@ func NewHashTableOpen() *HashTableOpen {
   return ht
 }
 
-// =======================
 // private hash function
-// =======================
-
 func (ht *HashTableOpen) hashFun(key string) int {
   hash := 0
   for _, ch := range key {
@@ -54,9 +38,7 @@ func (ht *HashTableOpen) hashFun(key string) int {
   return hash % openTableSize
 }
 
-// =======================
 // Public methods
-// =======================
 
 func (ht *HashTableOpen) Insert(value, key string) bool {
   if key == "" {
@@ -153,9 +135,6 @@ func (ht *HashTableOpen) PrintTable() {
   }
 }
 
-// =======================
-// Debug (для тестов)
-// =======================
 
 func (ht *HashTableOpen) DebugIndex(key string) int {
   return ht.hashFun(key)
