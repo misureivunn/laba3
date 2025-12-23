@@ -1,14 +1,7 @@
 package classes
 
-// =======================
-// constants
-// =======================
-
-const chainTableSize = 10 // аналог CHAIN_TABLE_SIZE
-
-// =======================
+const chainTableSize = 10 
 // private node
-// =======================
 
 type chainNode struct {
   key   string
@@ -16,17 +9,12 @@ type chainNode struct {
   next  *chainNode
 }
 
-// =======================
 // ChainHashTable (PUBLIC)
-// =======================
 
 type ChainHashTable struct {
   table [chainTableSize]*chainNode // private
 }
 
-// =======================
-// Constructor
-// =======================
 
 func NewChainHashTable() *ChainHashTable {
   ht := &ChainHashTable{}
@@ -36,10 +24,8 @@ func NewChainHashTable() *ChainHashTable {
   return ht
 }
 
-// =======================
-// private hash function
-// =======================
 
+// private hash function
 func (ht *ChainHashTable) hashFun(key string) int {
   hash := 0
   for _, ch := range key {
@@ -48,9 +34,7 @@ func (ht *ChainHashTable) hashFun(key string) int {
   return hash % chainTableSize
 }
 
-// =======================
 // Public methods
-// =======================
 
 func (ht *ChainHashTable) Contains(key string) bool {
   h := ht.hashFun(key)
