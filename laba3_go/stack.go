@@ -4,34 +4,23 @@ import (
   "fmt"
 )
 
-// =======================
 // private node
-// =======================
-
 type stackNode struct {
   data string
   next *stackNode
 }
 
-// =======================
 // Stack (PUBLIC)
-// =======================
-
 type Stack struct {
   head *stackNode // private
 }
-
-// =======================
-// Constructor
-// =======================
 
 func NewStack() *Stack { // PUBLIC
   return &Stack{head: nil}
 }
 
-// =======================
 // Public methods
-// =======================
+
 
 func (s *Stack) IsEmpty() bool {
   return s.head == nil
