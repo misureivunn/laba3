@@ -3,28 +3,19 @@ package classes
 import (
   "fmt"
 )
-
-// =======================
 // private node
-// =======================
 
 type queueNode struct {
   data string
   next *queueNode
 }
-
-// =======================
 // Queue (PUBLIC)
-// =======================
 
 type Queue struct {
   front *queueNode // private
   rear  *queueNode // private
 }
-
-// =======================
-// Constructor
-// =======================
+=============
 
 func NewQueue() *Queue { // PUBLIC
   return &Queue{
@@ -33,9 +24,7 @@ func NewQueue() *Queue { // PUBLIC
   }
 }
 
-// =======================
 // Public methods
-// =======================
 
 // добавление в конец очереди
 func (q *Queue) Push(value string) {
